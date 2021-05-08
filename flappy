@@ -1,14 +1,14 @@
 x1=500
+x=255
 txt=0
-y1=-990
-y2=310
+y1=-770
 def setup() :
     size (500,500)     
     textSize(15)
     fill(0)
     noStroke()
 def draw():
-    global x,t,x1,txt
+    global x,t,x1,txt,y1
     x+=2
     x1-=2
     background(255)
@@ -16,7 +16,7 @@ def draw():
     square(255,x,25)
     fill(0,255,0)
     rect(x1,y1, 50, 1000)
-    rect(x1,y2, 50, 1000)
+    rect(x1,y1 + 1080, 50, 1000)
     textSize(20)
     fill("#8531B9")
     text( 'x:'+str(mouseX),0,30)
@@ -39,6 +39,7 @@ def draw():
         text("GameOver",140,250)
         x+=10
     if x1<-50:
+        y1= random(-950,-450)
         x1=500
     if x1==160:
         txt+=1
